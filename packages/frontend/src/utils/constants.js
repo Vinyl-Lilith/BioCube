@@ -36,3 +36,7 @@ export const PRIORITY_LABELS = {
   npk:          { icon: '🧪', label: 'NPK Levels',    desc: 'Controls peristaltic pump' },
   humidity:     { icon: '🌫', label: 'Humidity',       desc: 'Controls intake & exhaust fans' },
 };
+
+// Pages that can be restricted — must match backend RESTRICTABLE_PAGES
+// Settings is intentionally excluded — users must always access their own settings
+export const RESTRICTABLE_PAGES = ['home', 'automation', 'manual', 'admin'];
