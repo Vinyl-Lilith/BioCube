@@ -228,16 +228,18 @@ export default function DashboardPage() {
           }}
         >
           <img
-  src={import.meta.env.VITE_STREAM_URL || `${import.meta.env.VITE_API_URL}/stream`}
-  alt="Webcam fullscreen"
-  crossOrigin="anonymous"
-  onError={e => {
-    setTimeout(() => {
-      e.target.src = e.target.src;
-    }, 3000);
-  }}
-  style={{ maxWidth: '90vw', maxHeight: '80vh', borderRadius: 8, display: 'block' }}
-/>
+            ref={imgRef}
+            src={import.meta.env.VITE_STREAM_URL || `${import.meta.env.VITE_API_URL}/stream`}
+            alt="Webcam fullscreen"
+            crossOrigin="anonymous"
+            style={{ maxWidth: '90vw', maxHeight: '80vh', borderRadius: 8, display: 'block' }}
+            onError={e => {
+  setTimeout(() => {
+    e.target.src = e.target.src; // force reload
+  }, 3000); // retry after 3 seconds
+}}
+          />
+          <div
             onClick={e => e.stopPropagation()}
             style={{ display: 'flex', gap: 12, marginTop: 16 }}
           >
