@@ -141,7 +141,7 @@ export default function DashboardPage() {
             <style>{`@keyframes scanLine { 0% { top:0 } 100% { top:100% } }`}</style>
             <img
               ref={imgRef}
-              src={import.meta.env.VITE_STREAM_URL || `${import.meta.env.VITE_API_URL}/stream`}
+              src={`${import.meta.env.VITE_API_URL || ''}/stream`}
               alt="Greenhouse webcam feed"
               style={{ width: '100%', height: '100%', objectFit: 'cover', display: 'block', position: 'absolute', top: 0, left: 0 }}
               onError={e => {
@@ -149,7 +149,7 @@ export default function DashboardPage() {
     e.target.src = e.target.src; // force reload
   }, 3000); // retry after 3 seconds
 }}
-              
+              crossOrigin="anonymous"
             />
             <div style={{ fontSize: 40, opacity: .25, position: 'relative', zIndex: 1 }}>📷</div>
             <div style={{ position: 'absolute', bottom: 8, left: 10, fontFamily: 'var(--bc-font-mono)', fontSize: 9, color: 'var(--bc-accent)', opacity: .7, zIndex: 2 }}>
@@ -229,7 +229,7 @@ export default function DashboardPage() {
         >
           <img
             ref={imgRef}
-            src={import.meta.env.VITE_STREAM_URL || `${import.meta.env.VITE_API_URL}/stream`}
+            src={`${import.meta.env.VITE_API_URL || ''}/stream`}
             alt="Webcam fullscreen"
             crossOrigin="anonymous"
             style={{ maxWidth: '90vw', maxHeight: '80vh', borderRadius: 8, display: 'block' }}
