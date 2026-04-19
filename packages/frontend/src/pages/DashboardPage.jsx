@@ -149,7 +149,7 @@ export default function DashboardPage() {
     e.target.src = e.target.src; // force reload
   }, 3000); // retry after 3 seconds
 }}
-              crossOrigin="anonymous"
+              
             />
             <div style={{ fontSize: 40, opacity: .25, position: 'relative', zIndex: 1 }}>📷</div>
             <div style={{ position: 'absolute', bottom: 8, left: 10, fontFamily: 'var(--bc-font-mono)', fontSize: 9, color: 'var(--bc-accent)', opacity: .7, zIndex: 2 }}>
